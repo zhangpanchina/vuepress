@@ -1,0 +1,69 @@
+#基本配置
+# 网站的标题，它将会被用作所有页面标题的前缀，同时，默认主题下，它将显示在导航栏（navbar）上
+title: VuePress
+# 网站的描述，它将会以 <meta> 标签渲染到当前页面的 HTML 中
+descrition: desc
+# 额外的需要被注入到当前页面的 HTML <head> 中的标签，每个标签都可以以 [tagName, { attrName: attrValue }, innerHTML?] 的格式指定
+head:
+  - - "link"
+    - rel: "icon"
+      href: "/home.png"
+# 指定用于 dev server 的主机名
+# host: 104.134.168.204
+serviceWorker: true
+# 语言配置
+locales:
+  /:
+    lang: zh-CN
+    title: VuePress
+    description: "Vue 驱动的静态网站生成器"
+  /en/:
+    lang: "en-US"
+    title: "VuePress"
+    description: "Vue-powered Static Site Generator"
+# 主题
+themeConfig:
+  # 部署站点
+  hostname: http://zhangpan.online
+  # 导航栏链接
+  nav:
+    - text: "backend"
+      link: "/backend/docker"
+    - text: LINUX
+      link: "/linux/linux"
+      # 提供items 数组时，显示下拉列表
+    - text: "External"
+      items:
+        - text: "test1"
+          link: "1test1"
+        - text: "test2"
+          items:
+            - text: test3
+              link: "test3"
+            - text: test4
+              link: "test4"
+  # 禁用所有页面的导航栏
+  # navbar: false
+  # 侧边栏
+  sidebar:
+    /backend/:
+      - docker.md
+      - mysql.md
+      - ssh.md
+    /linux/:
+      - linux.md
+  # 默认的深度是 1，它将提取到 h2 的标题，设置成 0 将会禁用标题（headers）链接，同时，最大的深度为 2，它将同时提取 h2 和 h3 标题；也可以使用 YAML front matter 来为某个页面重写此值
+  sidebarDepth: 2
+  # 默认情况下，侧边栏只会显示由当前活动页面的标题组成的链接，设置为 true 显示所有页面的标题链接
+  displayAllHeaders: false
+  # 最后更新时间
+  lastUpdated: true
+  serviceWorker:
+    # 刷新内容的弹窗
+    updatePopup: true
+  repo: "vuejs/vuepress"
+markdown:
+  lineNumbers: false
+# 构建流程
+# 浏览器兼容性
+evergreen: true
