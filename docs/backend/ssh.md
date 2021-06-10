@@ -18,4 +18,13 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
 # SSH 远程操作
 
+- 传输文件
+
+```bash
+scp 文件地址 root@ip:路径
+```
+
+- 传输文件夹
+  scp -r 文件地址 root@ip:路径
+
 # SSH 常用命令
