@@ -202,7 +202,79 @@ keyword
 - `Ctrl + D`：关闭 Shell 会话
 - `↑，↓`：浏览已执行命令的历史记录
 
-## 三、模式扩展
+## 三、模式扩展`globbing`
+
+### 1、八种扩展
+
+- 波浪线扩展
+- `?`字符扩展
+- `*`字符扩展
+- 方括号扩展
+- 大括号扩展
+- 变量扩展
+- 子命令扩展
+- 算术扩展
+
+`Bash` 允许用户关闭扩展
+
+```bash
+$ set -o noglob
+# 或者
+$ set -f
+```
+
+重新打开扩展
+
+```bash
+$ set +o noglob
+# 或者
+$ set +f
+```
+
+### 2、波浪线扩展
+
+```bash
+$ echo ~
+/home/me
+```
+
+`~user`表示扩展成用户`user`的主目录
+
+```bash
+$ echo ~foo
+/home/foo # 用户foor的主目录
+
+$ echo ~root
+/root # root用户的主目录
+```
+
+`~+`会扩展成当前所在的目录，等同于`pwd`命令
+
+```bash
+$ cd ~/foo
+$ echo ~+
+/home/me/foo
+```
+
+### 3、`?`字符扩展
+
+`?`字符代表文件路径里面的任意单个字符，不包括空字符，如果匹配多个字符，就需要多个`?`连用
+
+```bash
+# 存在文件 a.txt 和 b.txt
+$ ls ?.txt
+a.txt b.txt
+
+# 存在文件 a.txt、b.txt 和 ab.txt
+$ ls ??.txt
+ab.txt
+
+# 当前目录为空目录
+$ echo ?.txt
+?.txt
+```
+
+### 4、`*`字符扩展
 
 ## 四、引号和转义
 

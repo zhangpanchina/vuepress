@@ -25,6 +25,8 @@ locales:
 themeConfig:
   # 部署站点
   hostname: http://zhangpan.online
+  # 默认情况下，侧边栏只会显示由当前活动页面的标题组成的链接，设置为 true 显示所有页面的标题链接
+  displayAllHeaders: false
   # 导航栏链接
   nav:
     - text: "前端"
@@ -56,20 +58,18 @@ themeConfig:
   # 侧边栏
   sidebar:
     /web/source/:
-      - vue-router.md
+      - vue-router
     /web/javascript/:
-      - hash_history.md
+      - hash_history
     /backend/:
-      - docker.md
-      - mysql.md
-      - ssh.md
+      - docker
+      - mysql
+      - ssh
     /linux/:
-      - linux.md
-      - bash.md
+      - linux
+      - bash
   # 默认的深度是 1，它将提取到 h2 的标题，设置成 0 将会禁用标题（headers）链接，同时，最大的深度为 2，它将同时提取 h2 和 h3 标题；也可以使用 YAML front matter 来为某个页面重写此值
-  sidebarDepth: 1
-  # 默认情况下，侧边栏只会显示由当前活动页面的标题组成的链接，设置为 true 显示所有页面的标题链接
-  displayAllHeaders: false
+  sidebarDepth: 2
   # 最后更新时间
   lastUpdated: true
   serviceWorker:
