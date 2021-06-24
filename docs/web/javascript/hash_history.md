@@ -1,4 +1,7 @@
-# hash history 区别
+---
+sidebarDepth: 1
+---
+# hash history
 
 ## 一、history 对象
 > `history` 对象表示用户首次使用当前窗口以来导航的历史记录，处于安全考虑，不能通过它来访问历史`URL`,但它提供了前进和后退的`API`。
